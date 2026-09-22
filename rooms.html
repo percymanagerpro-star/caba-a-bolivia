@@ -1,0 +1,1749 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rooms | Cabaña Dorada</title>
+
+<style>
+
+/* GENERAL */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#fff;
+    color:#1b1b1b;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* HEADER */
+
+header{
+    height:92px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 4.5%;
+
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+
+    z-index:20;
+
+    color:#fff;
+    border-bottom:1px solid rgba(255,255,255,.5);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    height:92px;
+    flex-shrink:0;
+}
+
+.logo img{
+    display:block;
+    width:auto;
+    height:72px;
+    max-width:190px;
+    object-fit:contain;
+}
+
+.nav{
+    display:flex;
+    gap:48px;
+    align-items:center;
+
+    font-size:11px;
+    font-weight:bold;
+}
+
+.nav > a:not(.consult){
+    position:relative;
+}
+
+.nav > a:not(.consult)::after{
+    content:"";
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:1px;
+
+    background:#e5bd4c;
+    transition:.3s;
+}
+
+.nav > a:not(.consult):hover::after{
+    width:100%;
+}
+
+.consult{
+    padding:14px 22px;
+    border:1px solid #fff;
+
+    letter-spacing:1.5px;
+
+    transition:.3s;
+}
+
+.consult:hover{
+    background:#e5bd4c;
+    border-color:#e5bd4c;
+    color:#111;
+}
+
+
+/* HERO */
+
+.hero{
+    height:390px;
+
+    position:relative;
+    overflow:hidden;
+
+    color:#fff;
+    background:#000;
+}
+
+
+/* VIDEO MP4 DE FONDO */
+
+.hero-video{
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:0;
+}
+
+
+/* OSCURECER VIDEO */
+
+.hero-overlay{
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.58)
+        );
+
+    z-index:1;
+}
+
+
+/* TEXTO DEL HERO */
+
+.hero-copy{
+    position:relative;
+
+    z-index:5;
+
+    text-align:center;
+
+    padding:155px 20px 0;
+}
+
+.hero-copy h1{
+    font:700 38px Georgia,serif;
+
+    margin:0 0 18px;
+
+    text-shadow:0 2px 10px rgba(0,0,0,.5);
+}
+
+.hero-copy p{
+    max-width:680px;
+
+    margin:auto;
+
+    font-size:12px;
+    line-height:1.8;
+
+    text-shadow:0 1px 5px rgba(0,0,0,.7);
+}
+
+
+/* CONTENIDO */
+
+.wrap{
+    max-width:960px;
+
+    margin:0 auto;
+
+    padding:90px 28px;
+}
+
+
+/* EXTERIOR */
+
+.intro{
+    display:grid;
+
+    grid-template-columns:250px 1fr;
+
+    gap:70px;
+
+    margin-bottom:70px;
+}
+
+.intro h2{
+    font:500 45px/1.08 Georgia,serif;
+
+    margin:0;
+}
+
+.intro-copy{
+    font:italic 13px/1.8 Georgia,serif;
+
+    color:#6c7070;
+}
+
+.intro-copy:before{
+    content:"";
+
+    display:block;
+
+    width:52px;
+
+    border-top:1px solid #c69c50;
+
+    margin:12px 0 28px;
+}
+
+
+/* HABITACIONES */
+
+.rooms-grid{
+    border-bottom:1px solid #ddd;
+}
+
+.row{
+    display:grid;
+
+    grid-template-columns:
+        1fr 210px
+        1fr 210px;
+
+    gap:26px;
+
+    align-items:center;
+
+    padding:38px 0;
+
+    border-top:1px solid #ddd;
+}
+
+.row:first-child{
+    border-top:0;
+}
+
+.copy h3{
+    font:500 19px Georgia,serif;
+
+    margin:0 0 10px;
+}
+
+.copy p{
+    font:11px/1.7 Georgia,serif;
+
+    color:#5f6565;
+
+    margin:0;
+}
+
+.row img{
+    width:100%;
+    height:205px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.row img:hover{
+    transform:scale(1.03);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,.15);
+}
+
+
+/* SERVICIOS */
+
+.features{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:13px 18px;
+
+    margin:55px 15px 20px;
+}
+
+.feature{
+    border:1px solid #d9c6a8;
+
+    border-radius:8px;
+
+    padding:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    box-shadow:
+        0 2px 7px
+        rgba(0,0,0,.04);
+
+    transition:.25s;
+}
+
+.feature:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,.08);
+}
+
+.feature i{
+    width:34px;
+    height:34px;
+
+    flex:none;
+
+    background:#06354d;
+
+    color:#fff;
+
+    border-radius:7px;
+
+    display:grid;
+
+    place-items:center;
+
+    font-style:normal;
+}
+
+.feature div{
+    flex:1;
+}
+
+.feature b{
+    font:500 14px Georgia,serif;
+}
+
+.feature small{
+    display:block;
+
+    color:#999;
+
+    margin-top:4px;
+
+    font-size:8px;
+}
+
+.feature span{
+    width:23px;
+    height:23px;
+
+    border-radius:50%;
+
+    background:#f4eee4;
+
+    display:grid;
+
+    place-items:center;
+
+    color:#a88a56;
+}
+
+
+/* SECCIÓN FINAL */
+
+.cta{
+    min-height:430px;
+
+    background:
+        linear-gradient(
+            rgba(0,53,78,.86),
+            rgba(0,53,78,.86)
+        ),
+        url("assets/img/final.jpg")
+        center/cover;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:65px 20px;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+}
+
+.cta small{
+    color:#f5c72e;
+
+    letter-spacing:4px;
+
+    font-weight:bold;
+}
+
+.cta h2{
+    font:700 38px Georgia,serif;
+
+    margin:18px;
+}
+
+.cta h2 em{
+    color:#ffc928;
+    font-weight:normal;
+}
+
+.cta p{
+    max-width:550px;
+
+    margin:18px auto;
+
+    line-height:1.8;
+
+    font-size:12px;
+}
+
+.cta strong{
+    color:#ffc928;
+
+    font:700 26px Georgia,serif;
+}
+
+.cta-buttons{
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-top:22px;
+}
+
+.wa{
+    display:inline-block;
+
+    background:#19d36b;
+
+    color:#fff;
+
+    padding:15px 24px;
+
+    border-radius:4px;
+
+    font-weight:bold;
+
+    font-size:12px;
+
+    transition:.3s;
+}
+
+.wa:hover{
+    background:#11b95c;
+
+    transform:translateY(-2px);
+}
+
+
+/* FOOTER */
+
+.footer{
+    background:#fff;
+
+    color:#111;
+
+    padding-top:70px;
+}
+
+.footer-content{
+    max-width:920px;
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1.25fr
+        .8fr
+        1fr
+        1.25fr;
+
+    gap:55px;
+
+    padding:
+        0 35px
+        60px;
+}
+
+.footer-column h3{
+    font-family:Arial,sans-serif;
+
+    font-size:17px;
+
+    margin:0 0 18px;
+}
+
+.footer-column p,
+.footer-column a{
+    color:#929292;
+
+    font-size:11px;
+
+    line-height:1.8;
+}
+
+.footer-column > a{
+    display:block;
+
+    margin-bottom:5px;
+
+    transition:.2s;
+}
+
+.footer-column > a:hover{
+    color:#111;
+}
+
+.footer-column h4{
+    font-size:11px;
+
+    margin:
+        13px
+        0
+        3px;
+}
+
+.footer-column h4 + p{
+    margin-top:0;
+}
+
+.include{
+    margin:4px 0;
+}
+
+
+/* REDES */
+
+.socials{
+    display:flex;
+
+    align-items:center;
+
+    gap:17px;
+
+    margin-top:20px;
+}
+
+.socials a{
+    color:#111;
+
+    font-size:15px;
+
+    transition:.2s;
+}
+
+.socials a:hover{
+    color:#c99f32;
+
+    transform:translateY(-2px);
+}
+
+
+/* COPYRIGHT */
+
+.footer-bottom{
+    border-top:1px solid #e5e5e5;
+
+    text-align:center;
+
+    padding:
+        20px
+        20px
+        25px;
+
+    color:#999;
+}
+
+.footer-bottom p{
+    margin:4px 0;
+
+    font-size:9px;
+}
+
+.footer-bottom strong{
+    color:#111;
+
+    font-weight:500;
+}
+
+
+/* TABLET */
+
+@media(max-width:800px){
+
+    .nav{
+        gap:12px;
+
+        font-size:9px;
+    }
+
+    .consult{
+        display:none;
+    }
+
+    .intro{
+        grid-template-columns:1fr;
+
+        gap:20px;
+    }
+
+    .row{
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .row .copy{
+        min-height:130px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .footer-content{
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:40px 30px;
+    }
+}
+
+
+/* CELULAR */
+
+@media(max-width:520px){
+
+    header{
+        height:75px;
+
+        padding:0 16px;
+    }
+
+    .logo{
+        height:75px;
+    }
+
+    .logo img{
+        width:auto;
+        height:55px;
+        max-width:125px;
+        object-fit:contain;
+    }
+
+    .nav{
+        gap:9px;
+
+        font-size:8px;
+    }
+
+    .hero{
+        height:420px;
+    }
+
+    .hero-copy{
+        padding:
+            165px
+            24px
+            0;
+    }
+
+    .hero-copy h1{
+        font-size:34px;
+    }
+
+    .hero-copy p{
+        font-size:11px;
+    }
+
+    .wrap{
+        padding:
+            65px
+            22px;
+    }
+
+    .intro h2{
+        font-size:39px;
+    }
+
+    .row{
+        grid-template-columns:1fr;
+
+        gap:18px;
+    }
+
+    .row .copy{
+        min-height:auto;
+    }
+
+    .row img{
+        height:300px;
+    }
+
+    .features{
+        margin-left:0;
+
+        margin-right:0;
+    }
+
+    .cta{
+        min-height:500px;
+
+        padding:
+            60px
+            25px;
+    }
+
+    .cta h2{
+        font-size:30px;
+    }
+
+    .cta strong{
+        font-size:21px;
+    }
+
+    .footer{
+        padding-top:50px;
+    }
+
+    .footer-content{
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+        padding:
+            0
+            25px
+            50px;
+    }
+}
+
+</style>
+
+
+<style>
+.socials img,.social-links img{width:16px;height:16px;display:block}
+.socials a,.social-links a{display:inline-flex;align-items:center;justify-content:center}
+</style>
+
+<style>
+:root{
+    --gold:#d8b24b;
+    --gold-soft:#f1dfaa;
+    --ink:#171714;
+    --cream:#f8f5ee;
+    --muted:#746f66;
+    --line:#e8e0d2;
+}
+body{background:#fbfaf7}
+.wrap{max-width:1180px;padding:105px 32px}
+.intro{grid-template-columns:.8fr 1.2fr;gap:90px;margin-bottom:85px}
+.intro h2{font-size:clamp(42px,5vw,64px);letter-spacing:-1.5px}
+.intro-copy{font-size:15px;max-width:590px}
+.rooms-grid{border:0;display:grid;gap:34px}
+.row{
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+    padding:0;
+    border:0;
+}
+.row .copy{
+    min-height:330px;
+    padding:42px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    box-shadow:0 14px 45px rgba(39,31,17,.05);
+}
+.row .copy h3{
+    font-size:30px;
+    margin-bottom:16px;
+    color:var(--ink);
+}
+.row .copy p{
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+    line-height:1.9;
+    color:var(--muted);
+}
+.row img{
+    height:330px;
+    border-radius:22px;
+    box-shadow:0 14px 45px rgba(39,31,17,.09);
+}
+.row img:hover{transform:scale(1.015)}
+.features{
+    margin:75px 0 10px;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+.feature{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:18px 20px;
+}
+.feature i{
+    width:44px;height:44px;border-radius:12px;
+    background:#143e4d;
+}
+.feature b{font-size:16px}
+.feature small{font-size:10px;line-height:1.5}
+.feature span{
+    background:var(--cream);
+    color:#a7822c;
+}
+.hero{height:520px}
+.hero-overlay{
+    background:linear-gradient(to bottom,rgba(0,0,0,.25),rgba(0,0,0,.67));
+}
+.hero-copy{padding-top:205px}
+.hero-copy:before{
+    content:"CABAÑA DORADA · PLAYA EL DORADO";
+    display:block;
+    margin-bottom:18px;
+    color:#f0cf70;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:4px;
+}
+.hero-copy h1{font-size:clamp(44px,6vw,68px);font-weight:500}
+.hero-copy p{font-size:13px;max-width:620px}
+.cta{min-height:520px}
+.cta h2{font-size:clamp(36px,5vw,52px)}
+.wa{border-radius:10px;padding:17px 28px}
+.premium-label{
+    text-align:center;
+    display:block;
+    color:#a27e27;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:4px;
+    margin:0 0 14px;
+}
+.premium-title{
+    text-align:center;
+    font:400 clamp(36px,5vw,52px) Georgia,serif;
+    margin:0 0 12px;
+}
+.premium-sub{
+    max-width:650px;
+    margin:0 auto 45px;
+    text-align:center;
+    color:#777167;
+    font-size:13px;
+    line-height:1.8;
+}
+.features-wrap{
+    margin-top:90px;
+    padding-top:80px;
+    border-top:1px solid var(--line);
+}
+@media(max-width:800px){
+    .row{grid-template-columns:1fr 1fr}
+    .row .copy,.row img{min-height:280px;height:280px}
+    .row .copy{padding:28px}
+    .row .copy h3{font-size:24px}
+}
+@media(max-width:520px){
+    .hero{height:500px}
+    .hero-copy{padding:175px 22px 0}
+    .hero-copy:before{font-size:8px;letter-spacing:2px}
+    .wrap{padding:70px 18px}
+    .intro{gap:18px;margin-bottom:55px}
+    .intro h2{font-size:42px}
+    .row{grid-template-columns:1fr;gap:12px;margin-bottom:22px}
+    .row .copy{min-height:auto;height:auto;padding:28px 24px;border-radius:16px}
+    .row img{height:290px;border-radius:16px}
+    .features{grid-template-columns:1fr;margin-top:45px}
+    .features-wrap{margin-top:55px;padding-top:55px}
+}
+</style>
+
+
+<style>
+.features-wrap{
+    margin-top:85px;
+    padding:72px 0 10px;
+    border-top:1px solid #e8dfcf;
+}
+.features{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:14px;
+    margin:42px 0 18px;
+}
+.feature{
+    min-height:175px;
+    padding:25px 18px;
+    background:#fff;
+    border:1px solid #e8dfcf;
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:flex-start;
+    gap:14px;
+    box-shadow:0 10px 30px rgba(46,35,15,.045);
+    transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.feature:hover{
+    transform:translateY(-5px);
+    border-color:#d8b24b;
+    box-shadow:0 18px 38px rgba(46,35,15,.09);
+}
+.feature i{
+    width:48px;
+    height:48px;
+    flex:none;
+    display:grid;
+    place-items:center;
+    border-radius:15px;
+    background:#123f50;
+    color:#fff;
+    font-style:normal;
+    font-size:20px;
+}
+.feature div{flex:1}
+.feature b{
+    display:block;
+    font:500 17px/1.25 Georgia,serif;
+    color:#191814;
+}
+.feature small{
+    display:block;
+    margin-top:7px;
+    color:#898278;
+    font:10px/1.5 Arial,sans-serif;
+}
+.feature span{display:none}
+.extra-amenities{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px 22px;
+    padding:20px 10px 0;
+    color:#716b61;
+    font-size:11px;
+}
+.extra-amenities span{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+}
+.extra-amenities span:before{
+    content:"✓";
+    color:#b28a2f;
+    font-weight:900;
+}
+@media(max-width:950px){
+    .features{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:650px){
+    .features-wrap{margin-top:55px;padding-top:55px}
+    .features{grid-template-columns:repeat(2,1fr);gap:10px;margin-top:32px}
+    .feature{min-height:155px;padding:20px 15px;border-radius:16px}
+    .feature i{width:43px;height:43px;border-radius:13px}
+    .feature b{font-size:15px}
+    .feature small{font-size:9px}
+    .feature:last-child{grid-column:1/-1;min-height:auto;flex-direction:row;align-items:center}
+    .extra-amenities{gap:9px 15px;font-size:10px}
+}
+</style>
+
+
+<style>
+.feature > .feature-icon{width:52px;height:52px;flex:none;border-radius:15px;background:#123f50;display:flex;align-items:center;justify-content:center}
+.feature > .feature-icon img{width:25px;height:25px;display:block;object-fit:contain}
+</style>
+
+<style>
+/* YouTube como video de fondo: cubre todo el hero sin controles */
+.hero > iframe.hero-video{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:177.78vh;
+    height:56.25vw;
+    min-width:100%;
+    min-height:100%;
+    transform:translate(-50%,-50%);
+    border:0;
+    pointer-events:none;
+    z-index:0;
+}
+</style>
+
+<style>
+.hero{
+    background:
+        url("assets/img/hero-cabana.jpg")
+        center center / cover no-repeat;
+}
+</style>
+
+
+<style>
+/* MENÚ MÓVIL */
+.mobile-menu-btn{display:none}
+.mobile-menu,.mobile-menu-backdrop{display:none}
+
+@media(max-width:650px){
+    header .nav{display:none !important}
+
+    .mobile-menu-btn{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:9px;
+        height:44px;
+        padding:0 17px;
+        border:1px solid #d9b947;
+        border-radius:30px;
+        background:rgba(20,20,20,.45);
+        color:#fff;
+        font-size:10px;
+        font-weight:900;
+        letter-spacing:1.5px;
+        cursor:pointer;
+        backdrop-filter:blur(8px);
+        -webkit-backdrop-filter:blur(8px);
+        position:relative;
+        z-index:10002;
+    }
+
+    .mobile-menu-btn .bars{color:#e2bd48;font-size:19px}
+
+    .mobile-menu{
+        display:flex;
+        position:fixed;
+        top:0; right:0;
+        width:min(88vw,330px);
+        height:100dvh;
+        padding:105px 21px 35px;
+        background:#0b0f10;
+        z-index:10001;
+        flex-direction:column;
+        transform:translateX(105%);
+        transition:transform .3s ease;
+        box-shadow:-15px 0 40px rgba(0,0,0,.35);
+    }
+
+    .mobile-menu.open{transform:translateX(0)}
+
+    .mobile-menu a{
+        display:block;
+        padding:20px 14px;
+        color:#fff;
+        border-bottom:1px solid rgba(255,255,255,.10);
+        font-size:13px;
+        font-weight:900;
+        letter-spacing:2px;
+    }
+
+    .mobile-menu .mobile-consult{
+        margin-top:21px;
+        padding:20px 15px;
+        background:#e1bd43;
+        color:#111;
+        border:0;
+        border-radius:10px;
+        text-align:center;
+        line-height:1.4;
+    }
+
+    .mobile-menu-backdrop{
+        display:block;
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,.60);
+        z-index:10000;
+        opacity:0;
+        visibility:hidden;
+        transition:.3s;
+    }
+
+    .mobile-menu-backdrop.open{opacity:1;visibility:visible}
+    body.menu-open{overflow:hidden}
+}
+</style>
+
+
+<style>
+/* FONDO PREMIUM CABAÑA DORADA */
+html{background:#f4efe6;}
+body{background:#f4efe6 !important;}
+
+/* Las zonas principales dejan ver el fondo crema */
+.section,
+.reviews,
+.contact-section,
+.wrap{
+    background:transparent !important;
+}
+
+/* Tarjetas claras para conservar contraste */
+.amenity,
+.review-card,
+.contact-form,
+.contact-info,
+.row .copy,
+.feature{
+    background:#fffdf9 !important;
+}
+
+/* Footer limpio pero ligeramente cálido */
+footer,
+.footer{
+    background:#faf7f1 !important;
+}
+
+@media(max-width:700px){
+    body{background:#f4efe6 !important;}
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- PORTADA -->
+
+<section class="hero">
+
+
+    <!-- VIDEO DE FONDO -->
+<div class="hero-overlay"></div>
+
+
+    <!-- MENÚ -->
+
+    <header>
+<a class="logo" href="index.html">
+    <img src="assets/img/image.png" alt="Cabaña Dorada">
+</a>
+
+        <nav class="nav">
+
+            <a href="index.html">
+                INICIO
+            </a>
+
+            <a href="rooms.html">
+                ROOMS
+            </a>
+
+            <a href="contacto.html">
+                CONTACTO
+            </a>
+
+            <a
+                class="consult"
+                href="https://api.whatsapp.com/send?phone=51967984802&text=El%20mar%20te%20espera%20%E2%80%94%20y%20tiene%20precio%20especial%20para%20ti.%20Reg%C3%ADstrate%20y%20reserva%20directamente%20por%20aqu%C3%AD%3A%20obt%C3%A9n%20S%2F%2090%20de%20descuento%20inmediato%20en%20tu%20estad%C3%ADa%20m%C3%A1s%20acceso%20a%20promociones%20exclusivas%20solo%20para%20hu%C3%A9spedes%20de%20la%20web.%20Sin%20intermediarios%2C%20sin%20costos%20extra.%20Solo%20t%C3%BA%2C%20el%20mar%20y%20el%20mejor%20precio."
+                target="_blank"
+            >
+                RESOLVEMOS TUS CONSULTAS!!
+            </a>
+
+        </nav>
+
+    
+<button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-expanded="false">
+    <span class="bars">☰</span>
+    <span>MENÚ</span>
+</button>
+
+</header>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+<nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html">INICIO</a>
+    <a href="rooms.html">ROOMS</a>
+    <a href="contacto.html">CONTACTO</a>
+    <a class="mobile-consult"
+       href="https://wa.me/51967984802?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20Caba%C3%B1a%20Dorada"
+       target="_blank" rel="noopener">
+       CONSULTAR<br>DISPONIBILIDAD
+    </a>
+</nav>
+
+
+
+    <!-- TEXTO SOBRE VIDEO -->
+
+    <div class="hero-copy">
+
+        <h1>
+            Conoce la Cabaña
+        </h1>
+
+        <p>
+            Cabaña Dorada está diseñada para que tu única
+            preocupación sea disfrutar. Espacios amplios,
+            cómodos y con todo lo que necesitas — a pasos
+            del mar en Caleta Colorada, Chimbote.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- CONTENIDO -->
+
+<main class="wrap">
+
+
+    <!-- EXTERIOR -->
+
+    <section class="intro">
+
+        <h2>
+            Exterior &<br>
+            Paisaje
+        </h2>
+
+
+        <div class="intro-copy">
+
+            <b>
+                El mar como jardín
+            </b>
+
+            <p>
+                Despierta con el sonido de las olas y sal
+                directo a la playa. La cabaña está ubicada
+                a pocos metros del mar, rodeada del paisaje
+                natural de Caleta Colorada — sin ruido,
+                sin multitudes, solo naturaleza.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- HABITACIONES -->
+
+    <section class="rooms-grid">
+
+
+        <!-- FILA 1 -->
+
+        <div class="row">
+
+
+            <div class="copy">
+
+                <h3>
+                    Suite Dorada
+                </h3>
+
+                <p>
+                    Cama queen con vista al mar,
+                    jacuzzi privado y armario amplio.
+                    Diseñada para el descanso total
+                    frente al Pacífico.
+                </p>
+
+            </div>
+
+
+            <img
+                src="assets/img/room-gallery-1.png"
+                alt="Suite Dorada"
+            >
+
+
+
+            <div class="copy">
+
+                <h3>
+                    Habitación Familiar
+                </h3>
+
+                <p>
+                    Dos camas cómodas con baño privado
+                    incluido. Ideal para familia o amigos
+                    que buscan comodidad y descanso.
+                </p>
+
+            </div>
+
+
+            <img
+                src="assets/img/room-gallery-2.png"
+                alt="Habitación Familiar"
+            >
+
+        </div>
+
+
+
+        <!-- FILA 2 -->
+
+        <div class="row">
+
+
+            <div class="copy">
+
+                <h3>
+                    Terraza & Área Social
+                </h3>
+
+                <p>
+                    Terraza panorámica con parrilla,
+                    sala exterior y acceso directo
+                    a la playa.
+                </p>
+
+            </div>
+
+
+            <img
+                src="assets/img/room-gallery-3.png"
+                alt="Terraza y área social"
+            >
+
+
+
+            <div class="copy">
+
+                <h3>
+                    Cocina completa,<br>
+                    todo incluido
+                </h3>
+
+                <p>
+                    Equipada con todo lo necesario:
+                    cocina, refrigeradora, utensilios
+                    y espacio para compartir.
+                </p>
+
+            </div>
+
+
+            <img
+                src="assets/img/room-gallery-4.png"
+                alt="Cocina equipada"
+            >
+
+        </div>
+
+
+
+        <!-- FILA 3 -->
+
+        <div class="row">
+
+
+            <div class="copy">
+
+                <h3>
+                    Espacios para compartir
+                </h3>
+
+                <p>
+                    Sala amplia y cómoda para conversar,
+                    jugar, descansar y disfrutar del
+                    ambiente acogedor de la cabaña.
+                </p>
+
+            </div>
+
+
+            <img
+                src="assets/img/room-gallery-5.png"
+                alt="Comedor y espacios para compartir"
+            >
+
+
+
+            <div class="copy">
+
+                <h3>
+                    Privacidad total
+                </h3>
+
+                <p>
+                    Tres baños privados para una estadía
+                    cómoda, con espacios pensados para
+                    tu privacidad y comodidad.
+                </p>
+
+            </div>
+
+
+            <img
+                src="assets/img/room-gallery-6.png"
+                alt="Baño privado"
+            >
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- SERVICIOS -->
+
+    <div class="features-wrap">
+<span class="premium-label">COMODIDADES</span>
+<h2 class="premium-title">Todo preparado para tu estadía</h2>
+<p class="premium-sub">Espacios y servicios pensados para que disfrutes Cabaña Dorada con comodidad, privacidad y el mar siempre cerca.</p>
+<section class="features">
+<div class="feature">
+<div class="feature-icon"><img src="assets/icons/guests.svg" alt=""></div>
+<div><b>Hasta 12 huéspedes</b><small>Espacio cómodo para familias y grupos</small></div>
+</div>
+<div class="feature">
+<div class="feature-icon"><img src="assets/icons/bed.svg" alt=""></div>
+<div><b>3 habitaciones</b><small>Ambientes privados para descansar</small></div>
+</div>
+<div class="feature">
+<div class="feature-icon"><img src="assets/icons/bathroom.svg" alt=""></div>
+<div><b>3 baños</b><small>Mayor comodidad durante tu estadía</small></div>
+</div>
+<div class="feature">
+<div class="feature-icon"><img src="assets/icons/jacuzzi.svg" alt=""></div>
+<div><b>Jacuzzi en suite</b><small>Un espacio especial para relajarte</small></div>
+</div>
+<div class="feature">
+<div class="feature-icon"><img src="assets/icons/beach.svg" alt=""></div>
+<div><b>A 50 m del mar</b><small>Disfruta Playa El Dorado muy cerca</small></div>
+</div>
+</section>
+<div class="extra-amenities">
+<span>WiFi de alta velocidad</span>
+<span>Cocina equipada</span>
+<span>Parrilla incluida</span>
+<span>Pet Friendly</span>
+<span>Traslado disponible</span>
+</div>
+</div>
+
+</main>
+
+
+
+<!-- RESERVA -->
+
+<section class="cta" style="
+    background:
+        linear-gradient(rgba(0,53,78,0.82), rgba(0,53,78,0.82)),
+        url('assets/img/personas.png') center center / cover no-repeat;
+">
+
+    <small>
+        CALETA COLORADA · PLAYA EL DORADO · CHIMBOTE
+    </small>
+
+    <h2>
+        El plan que llevas meses postergando
+        <br>
+
+        <em>
+            empieza aquí
+        </em>
+    </h2>
+
+    <p>
+        Entre Playa El Dorado y Caleta Colorada,
+        vive el descanso que mereces frente al mar,
+        con privacidad, tranquilidad y atardeceres
+        inolvidables.
+    </p>
+
+    <p>
+        Pocas fechas disponibles. Reserva ahora y obtén
+    </p>
+
+    <strong>
+        S/ 90 de descuento exclusivo al reservar directo.
+    </strong>
+
+    <div class="cta-buttons">
+
+        <a
+            class="wa"
+            href="https://wa.me/51967984802?text=Hola%2C%20quiero%20consultar%20la%20disponibilidad%20de%20Caba%C3%B1a%20Dorada"
+            target="_blank"
+        >
+            ☎ Reservar por WhatsApp
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+
+    <div class="footer-content">
+
+
+        <!-- CABAÑA -->
+
+        <div class="footer-column">
+
+            <h3>
+                Cabaña Dorada
+            </h3>
+
+
+            <p>
+                Disfruta de una experiencia única frente
+                al mar en Playa El Dorado, Chimbote.
+                Equipada con todas las comodidades para
+                escapadas, eventos y momentos inolvidables.
+            </p>
+
+
+            <div class="socials">
+
+                <a href="https://www.facebook.com/cabana.dorada.2025" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt=""></a>
+
+                <a href="https://www.instagram.com/caba_dorada" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt=""></a>
+
+                <a href="https://www.tiktok.com/@cabaa.dorada" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><img src="assets/icons/tiktok.svg" alt=""></a>
+
+                <a
+                    href="https://api.whatsapp.com/send?phone=51967984802&text=El%20mar%20te%20espera%20%E2%80%94%20y%20tiene%20precio%20especial%20para%20ti.%20Reg%C3%ADstrate%20y%20reserva%20directamente%20por%20aqu%C3%AD%3A%20obt%C3%A9n%20S%2F%2090%20de%20descuento%20inmediato%20en%20tu%20estad%C3%ADa%20m%C3%A1s%20acceso%20a%20promociones%20exclusivas%20solo%20para%20hu%C3%A9spedes%20de%20la%20web.%20Sin%20intermediarios%2C%20sin%20costos%20extra.%20Solo%20t%C3%BA%2C%20el%20mar%20y%20el%20mejor%20precio."
+                    target="_blank"
+                    aria-label="WhatsApp"
+                >
+                    ◉
+                </a>
+
+                <a
+                    href="mailto:cabadorada21@gmail.com"
+                    aria-label="Correo"
+                >
+                    ✉
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVEGACIÓN -->
+
+        <div class="footer-column">
+
+            <h3>
+                Navegación
+            </h3>
+
+
+            <a href="index.html">
+                Inicio
+            </a>
+
+            <a href="rooms.html">
+                Rooms – La Cabaña
+            </a>
+
+            <a href="contacto.html">
+                Contacto
+            </a>
+
+        </div>
+
+
+
+        <!-- QUÉ INCLUYE -->
+
+        <div class="footer-column">
+
+            <h3>
+                ¿Qué incluye?
+            </h3>
+
+
+            <p class="include">
+                ✓ Acceso privado a la playa
+            </p>
+
+            <p class="include">
+                ✓ Cocina equipada
+            </p>
+
+            <p class="include">
+                ✓ Ropa de cama y toallas
+            </p>
+
+            <p class="include">
+                ✓ Wifi incluido
+            </p>
+
+            <p class="include">
+                ✓ Parrilla / área exterior
+            </p>
+
+            <p class="include">
+                ✓ Vista panorámica al Pacífico
+            </p>
+
+        </div>
+
+
+
+        <!-- PREGUNTAS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Preguntas frecuentes
+            </h3>
+
+
+            <h4>
+                ¿Cuántas personas entran?
+            </h4>
+
+            <p>
+                Hasta 12 personas cómodamente.
+            </p>
+
+
+            <h4>
+                ¿Se puede reservar por días?
+            </h4>
+
+            <p>
+                Sí, mínimo 1 noche.
+            </p>
+
+
+            <h4>
+                ¿Hay descuento reservando directo?
+            </h4>
+
+            <p>
+                Sí, S/ 90 off solo por la web oficial.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- COPYRIGHT -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Cabaña Dorada · Playa El Dorado,
+            Chimbote, Áncash · Perú
+        </p>
+
+        <p>
+            Desarrollado por
+            <strong>
+                CAVIDA INTEGRAL S.A.C.
+            </strong>
+        </p>
+
+    </div>
+
+
+</footer>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+    const btn=document.getElementById("mobileMenuBtn");
+    const menu=document.getElementById("mobileMenu");
+    const bg=document.getElementById("mobileMenuBackdrop");
+    if(!btn||!menu||!bg)return;
+
+    function setMenu(open){
+        menu.classList.toggle("open",open);
+        bg.classList.toggle("open",open);
+        document.body.classList.toggle("menu-open",open);
+        btn.setAttribute("aria-expanded",open?"true":"false");
+        btn.querySelector(".bars").textContent=open?"✕":"☰";
+    }
+
+    btn.addEventListener("click",()=>setMenu(!menu.classList.contains("open")));
+    bg.addEventListener("click",()=>setMenu(false));
+    menu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>setMenu(false)));
+});
+</script>
+
+</body>
+</html>
