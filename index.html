@@ -979,6 +979,23 @@ body{overflow-x:hidden}
 }
 </style>
 
+
+<style>
+/* YouTube como video de fondo: cubre todo el hero sin controles */
+.hero > iframe.hero-video{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:177.78vh;
+    height:56.25vw;
+    min-width:100%;
+    min-height:100%;
+    transform:translate(-50%,-50%) scale(1.08);
+    border:0;
+    pointer-events:none;
+    z-index:0;
+}
+</style>
 </head>
 
 <body>
@@ -987,20 +1004,15 @@ body{overflow-x:hidden}
 
 <section class="hero">
 
-    <video
-        id="videoInicio"
+    <iframe
         class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-    >
-        <source
-            src="assets/img/video/videoinicio.mp4"
-            type="video/mp4"
-        >
-    </video>
+        src="https://www.youtube.com/embed/e1M4myIZ8TQ?autoplay=1&mute=1&loop=1&playlist=e1M4myIZ8TQ&controls=0&disablekb=1&fs=0&iv_load_policy=3&rel=0&playsinline=1&modestbranding=1&autohide=1"
+        title="Cabaña Dorada - video de inicio"
+        frameborder="0"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+    ></iframe>
 
     <div class="hero-overlay"></div>
 

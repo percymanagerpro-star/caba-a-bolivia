@@ -1018,6 +1018,23 @@ body{background:#fbfaf7}
 .feature > .feature-icon{width:52px;height:52px;flex:none;border-radius:15px;background:#123f50;display:flex;align-items:center;justify-content:center}
 .feature > .feature-icon img{width:25px;height:25px;display:block;object-fit:contain}
 </style>
+
+<style>
+/* YouTube como video de fondo: cubre todo el hero sin controles */
+.hero > iframe.hero-video{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:177.78vh;
+    height:56.25vw;
+    min-width:100%;
+    min-height:100%;
+    transform:translate(-50%,-50%) scale(1.08);
+    border:0;
+    pointer-events:none;
+    z-index:0;
+}
+</style>
 </head>
 
 
@@ -1031,21 +1048,15 @@ body{background:#fbfaf7}
 
     <!-- VIDEO DE FONDO -->
 
-    <video
+    <iframe
         class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-    >
-
-        <source
-            src="assets/img/video/cabana.mp4"
-            type="video/mp4"
-        >
-
-    </video>
+        src="https://www.youtube.com/embed/e1M4myIZ8TQ?autoplay=1&mute=1&loop=1&playlist=e1M4myIZ8TQ&controls=0&disablekb=1&fs=0&iv_load_policy=3&rel=0&playsinline=1&modestbranding=1&autohide=1"
+        title="Cabaña Dorada - recorrido"
+        frameborder="0"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+    ></iframe>
 
 
     <div class="hero-overlay"></div>
