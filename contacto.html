@@ -1,0 +1,2210 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Contacto | Cabaña Dorada</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    color:#161616;
+    background:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* HERO */
+
+.page-hero{
+    position:relative;
+    height:390px;
+    color:#fff;
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.48)
+        ),
+        url('assets/img/contacto.png') center center / cover no-repeat;
+}
+
+
+/* HEADER */
+
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    z-index:20;
+
+    height:92px;
+    padding:0 4.5%;
+
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+
+    color:#fff;
+    border-bottom:1px solid rgba(255,255,255,.5);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    height:92px;
+    flex-shrink:0;
+}
+
+.logo img{
+    display:block;
+    width:auto;
+    height:72px;
+    max-width:150px;
+    object-fit:contain;
+}
+
+
+/* MENU */
+
+.nav{
+    display:flex;
+    align-items:center;
+    gap:55px;
+
+    font-size:11px;
+    font-weight:bold;
+}
+
+.nav a{
+    color:#fff;
+    transition:.2s;
+}
+
+.nav a:hover{
+    color:#e8be42;
+}
+
+.nav .consult{
+    border:1px solid #fff;
+    padding:14px 22px;
+    letter-spacing:1.5px;
+}
+
+
+/* REDES HERO */
+
+.hero-social{
+    position:absolute;
+    top:118px;
+    left:4%;
+    z-index:5;
+
+    display:flex;
+    gap:18px;
+
+    font-size:15px;
+}
+
+.hero-social a{
+    color:#fff;
+}
+
+
+/* =========================
+   CONTACTO.PNG DETRAS TEXTO
+========================= */
+
+.page-title{
+    height:390px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    padding:105px 20px 20px;
+
+    background:none;
+}
+
+.page-title h1{
+    margin:0 0 22px;
+
+    color:#fff;
+
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:46px;
+    font-weight:bold;
+
+    text-shadow:0 2px 10px rgba(0,0,0,.55);
+}
+
+.page-title p{
+    max-width:750px;
+
+    margin:0 auto;
+
+    color:#fff;
+
+    font-size:13px;
+    line-height:1.7;
+
+    text-shadow:0 2px 8px rgba(0,0,0,.6);
+}
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contact-section{
+    max-width:1000px;
+
+    margin:0 auto;
+
+    padding:90px 25px 80px;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1.7fr)
+        minmax(260px,.85fr);
+
+    gap:55px;
+}
+
+
+/* FORMULARIO */
+
+.contact-form h2{
+    margin:0 0 15px;
+
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:34px;
+    font-weight:normal;
+}
+
+.contact-form > p{
+    margin:0 0 45px;
+
+    color:#777;
+
+    font-size:12px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+
+    margin-bottom:7px;
+
+    color:#666;
+
+    font-size:11px;
+    font-weight:bold;
+}
+
+.required{
+    color:#e85843;
+}
+
+
+/* NOMBRE Y APELLIDO */
+
+.name-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+}
+
+.input-note{
+    display:block;
+
+    margin-top:6px;
+
+    color:#999;
+
+    font-size:9px;
+}
+
+
+/* INPUTS */
+
+input,
+textarea{
+    width:100%;
+
+    border:1px solid #ccc;
+
+    background:#fff;
+
+    padding:12px 13px;
+
+    font-family:Arial, sans-serif;
+
+    font-size:13px;
+
+    outline:none;
+
+    transition:.2s;
+}
+
+input{
+    height:42px;
+}
+
+textarea{
+    min-height:110px;
+
+    resize:vertical;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#b68d2d;
+
+    box-shadow:
+        0 0 0 2px rgba(182,141,45,.08);
+}
+
+.phone-input{
+    max-width:360px;
+}
+
+
+/* BOTON ENVIAR */
+
+.send-btn{
+    margin-top:18px;
+
+    background:#fff;
+
+    color:#222;
+
+    border:1px solid #222;
+
+    padding:14px 30px;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.send-btn:hover{
+    background:#222;
+    color:#fff;
+}
+
+
+/* =========================
+   INFORMACION DERECHA
+========================= */
+
+.contact-info{
+    border-left:1px solid #ddd;
+
+    padding-left:35px;
+}
+
+.info-title{
+    margin-bottom:8px;
+
+    color:#aaa;
+
+    font-family:Georgia, serif;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+}
+
+.location-text{
+    margin:0 0 18px;
+
+    font-family:Georgia, serif;
+
+    font-size:15px;
+
+    line-height:1.45;
+
+    font-weight:bold;
+}
+
+
+/* MAPA */
+
+.map{
+    width:100%;
+
+    height:185px;
+
+    margin:15px 0 25px;
+
+    overflow:hidden;
+
+    background:#eee;
+}
+
+.map iframe{
+    width:100%;
+
+    height:100%;
+
+    border:0;
+
+    display:block;
+}
+
+.separator{
+    height:1px;
+
+    background:#ddd;
+
+    margin:25px 0;
+}
+
+
+/* INFORMACION */
+
+.info-block{
+    margin-bottom:22px;
+}
+
+.info-block p{
+    margin:5px 0;
+
+    font-size:13px;
+
+    line-height:1.6;
+}
+
+.info-block a{
+    color:#222;
+}
+
+.info-block a:hover{
+    color:#b58a21;
+}
+
+
+/* REDES */
+
+.social-links{
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-top:14px;
+}
+
+.social-links a{
+    width:32px;
+
+    height:32px;
+
+    border:1px solid #ddd;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:12px;
+
+    transition:.2s;
+}
+
+.social-links a:hover{
+    background:#111;
+
+    color:#fff;
+}
+
+
+/* =========================
+   CTA CON PERSONAS.PNG
+========================= */
+
+.cta{
+    margin:0 8px;
+
+    min-height:470px;
+
+    background:
+        linear-gradient(
+            rgba(0,43,68,.72),
+            rgba(0,43,68,.72)
+        ),
+        url('assets/img/personas.png') center center / cover no-repeat;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:70px 20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.cta small{
+    display:block;
+
+    color:#ffc928;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:4px;
+
+    margin-bottom:18px;
+}
+
+.cta h2{
+    max-width:650px;
+
+    margin:0 auto 18px;
+
+    font-family:Georgia, serif;
+
+    font-size:38px;
+
+    line-height:1.1;
+
+    color:#fff;
+
+    text-shadow:0 2px 8px rgba(0,0,0,.55);
+}
+
+.cta h2 em{
+    color:#ffc928;
+
+    font-weight:normal;
+}
+
+.cta-line{
+    width:35px;
+
+    height:2px;
+
+    margin:20px auto;
+
+    background:#ffc928;
+}
+
+.cta p{
+    max-width:540px;
+
+    margin:20px auto;
+
+    line-height:1.8;
+
+    font-size:13px;
+
+    color:#fff;
+
+    text-shadow:0 1px 5px rgba(0,0,0,.5);
+}
+
+.cta strong{
+    display:block;
+
+    margin:15px auto 25px;
+
+    color:#ffc928;
+
+    font-family:Georgia, serif;
+
+    font-size:23px;
+
+    text-shadow:0 2px 6px rgba(0,0,0,.5);
+}
+
+
+/* BOTONES CTA */
+
+.cta-buttons{
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+}
+
+.wa{
+    display:inline-block;
+
+    background:#18d76d;
+
+    color:#fff;
+
+    padding:15px 24px;
+
+    border-radius:4px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    transition:.25s;
+}
+
+.wa:hover{
+    transform:translateY(-2px);
+}
+
+.airbnb{
+    display:inline-block;
+
+    background:#ff5a60;
+
+    color:#fff;
+
+    padding:15px 24px;
+
+    border-radius:4px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    transition:.25s;
+}
+
+.airbnb:hover{
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:70px 30px 55px;
+
+    display:grid;
+
+    grid-template-columns:
+        1.3fr
+        1fr
+        1fr
+        1.4fr;
+
+    gap:50px;
+}
+
+footer h3{
+    margin-top:0;
+
+    font-size:18px;
+}
+
+footer p,
+footer li{
+    color:#888;
+
+    font-size:12px;
+
+    line-height:1.8;
+}
+
+footer ul{
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+}
+
+footer li{
+    margin-bottom:5px;
+}
+
+.footer-social{
+    display:flex;
+
+    gap:14px;
+
+    margin-top:20px;
+}
+
+.footer-social a{
+    color:#111;
+}
+
+
+/* COPYRIGHT */
+
+.copyright{
+    border-top:1px solid #eee;
+
+    text-align:center;
+
+    padding:22px 20px 35px;
+
+    color:#aaa;
+
+    font-size:10px;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:900px){
+
+    header{
+        padding:0 25px;
+    }
+
+    .nav{
+        gap:20px;
+    }
+
+    .contact-section{
+        grid-template-columns:1fr 330px;
+
+        gap:35px;
+    }
+
+    footer{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width:700px){
+
+    .page-hero{
+        height:390px;
+        min-height:390px;
+    }
+
+    header{
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+
+        height:92px;
+        min-height:92px;
+
+        padding:0 18px;
+
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
+
+        gap:10px;
+    }
+
+    .logo{
+        height:92px;
+        flex-shrink:0;
+    }
+
+    .logo img{
+        width:auto;
+        height:68px;
+        max-width:125px;
+        object-fit:contain;
+    }
+
+    .nav{
+        width:auto;
+        justify-content:flex-end;
+        gap:14px;
+        font-size:9px;
+    }
+
+    .nav .consult{
+        display:none;
+    }
+
+    .hero-social{
+        display:none;
+    }
+
+    .page-title{
+        height:390px;
+        min-height:390px;
+        padding:105px 18px 20px;
+        background:none;
+    }
+
+    .page-title h1{
+        font-size:43px;
+        margin-bottom:18px;
+    }
+
+    .page-title p{
+        max-width:570px;
+        font-size:11px;
+        line-height:1.7;
+    }
+
+    .contact-section{
+        display:block;
+        padding:55px 20px 60px;
+    }
+
+    .contact-form{
+        margin-bottom:55px;
+    }
+
+    .contact-form h2{
+        font-size:30px;
+    }
+
+    .name-grid{
+        grid-template-columns:1fr;
+    }
+
+    .phone-input{
+        max-width:none;
+    }
+
+    .contact-info{
+        border-left:0;
+        border-top:1px solid #ddd;
+        padding-left:0;
+        padding-top:35px;
+    }
+
+    .map{
+        height:220px;
+    }
+
+    .cta{
+        margin:0;
+        min-height:500px;
+        padding:55px 20px;
+
+        background:
+            linear-gradient(
+                rgba(0,43,68,.72),
+                rgba(0,43,68,.72)
+            ),
+            url('assets/img/personas.png') center center / cover no-repeat;
+    }
+
+    .cta small{
+        font-size:9px;
+        letter-spacing:2px;
+    }
+
+    .cta h2{
+        font-size:31px;
+    }
+
+    .cta p{
+        font-size:12px;
+        max-width:380px;
+    }
+
+    .cta strong{
+        font-size:20px;
+    }
+
+    .cta-buttons{
+        width:100%;
+        flex-direction:column;
+    }
+
+    .wa,
+    .airbnb{
+        width:100%;
+        max-width:300px;
+        text-align:center;
+    }
+
+    footer{
+        grid-template-columns:1fr;
+        padding:50px 25px;
+        gap:35px;
+    }
+}
+
+
+/* CELULAR PEQUEÑO */
+
+@media(max-width:420px){
+
+    header{
+        padding:0 12px;
+    }
+
+    .logo img{
+        height:58px;
+        max-width:105px;
+    }
+
+    .nav{
+        gap:10px;
+        font-size:8px;
+    }
+
+    .page-title h1{
+        font-size:40px;
+    }
+
+    .contact-form h2{
+        font-size:27px;
+    }
+
+    .cta h2{
+        font-size:27px;
+    }
+
+}
+
+</style>
+
+
+<style>
+.socials img,.social-links img{width:16px;height:16px;display:block}
+.socials a,.social-links a{display:inline-flex;align-items:center;justify-content:center}
+</style>
+
+<style>
+:root{
+  --lux-gold:#c9a449;
+  --lux-gold-soft:#ead7a4;
+  --lux-ink:#171714;
+  --lux-cream:#f8f5ee;
+  --lux-muted:#756f65;
+  --lux-line:#e8dfd0;
+  --lux-navy:#0f3d4d;
+}
+body{background:#fbfaf7;color:var(--lux-ink)}
+.page-hero{height:520px;border-radius:0 0 28px 28px}
+.page-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.08),rgba(0,0,0,.3));pointer-events:none}
+header{height:96px;padding:0 5.5%;border-bottom:1px solid rgba(255,255,255,.28)}
+.logo,.logo img{height:76px}
+.nav{gap:42px;letter-spacing:.8px}
+.nav .consult{border-radius:999px;padding:13px 20px;background:rgba(255,255,255,.1);backdrop-filter:blur(8px)}
+.page-title{height:520px;position:relative;z-index:2;padding-top:120px}
+.page-title:before{content:"CABAÑA DORADA · PLAYA EL DORADO";display:block;color:#f2d477;font-size:10px;font-weight:800;letter-spacing:4px;margin-bottom:18px}
+.page-title h1{font-size:clamp(52px,7vw,78px);font-weight:400;letter-spacing:-2px;margin-bottom:16px}
+.page-title p{max-width:590px;font-size:13px;line-height:1.9}
+.hero-social{z-index:4;top:auto;bottom:28px;left:5.5%}
+
+.contact-section{
+  max-width:1180px;
+  padding:105px 28px 110px;
+  grid-template-columns:minmax(0,1.35fr) minmax(320px,.75fr);
+  gap:32px;
+}
+.contact-form,.contact-info{
+  background:#fff;
+  border:1px solid var(--lux-line);
+  border-radius:24px;
+  box-shadow:0 18px 55px rgba(43,34,17,.06);
+}
+.contact-form{padding:48px}
+.contact-form:before{content:"HABLEMOS";display:block;color:#a47f29;font-size:9px;font-weight:900;letter-spacing:3px;margin-bottom:14px}
+.contact-form h2{font-size:42px;letter-spacing:-1px;margin-bottom:12px}
+.contact-form>p{font-size:13px;line-height:1.7;margin-bottom:36px}
+.form-group{margin-bottom:18px}
+.form-group label{font-size:10px;letter-spacing:.7px;color:#5f5a52}
+input,textarea{
+  border:1px solid var(--lux-line);
+  border-radius:12px;
+  background:#fcfbf8;
+  padding:14px 15px;
+}
+input{height:50px}
+textarea{min-height:135px}
+input:focus,textarea:focus{border-color:var(--lux-gold);box-shadow:0 0 0 4px rgba(201,164,73,.09);background:#fff}
+.send-btn{
+  width:100%;border:0;border-radius:12px;
+  background:var(--lux-ink);color:#fff;
+  padding:17px 25px;margin-top:8px;
+}
+.send-btn:hover{background:var(--lux-gold);color:#171714;transform:translateY(-2px)}
+
+.contact-info{border-left:1px solid var(--lux-line);padding:40px}
+.info-title{color:#a47f29;font-family:Arial,sans-serif;font-size:9px;font-weight:900;letter-spacing:2.5px}
+.location-text{font-size:20px;font-weight:400;line-height:1.45}
+.map{height:230px;border-radius:16px;margin:20px 0 28px}
+.separator{background:var(--lux-line)}
+.info-block p{color:var(--lux-muted)}
+.social-links{gap:10px}
+.social-links a{
+  width:40px;height:40px;border-color:var(--lux-line);
+  background:#faf8f3;
+}
+.social-links a:hover{background:var(--lux-navy);border-color:var(--lux-navy)}
+.social-links img{width:17px;height:17px}
+
+.cta{
+  margin:0;
+  min-height:560px;
+  border-radius:28px 28px 0 0;
+  background:
+    linear-gradient(rgba(6,38,52,.69),rgba(6,38,52,.76)),
+    url('assets/img/personas.png') center/cover no-repeat;
+}
+.cta small{color:#f0cf70}
+.cta h2{font-size:clamp(38px,5vw,58px);font-weight:400;max-width:760px}
+.cta strong{font-size:25px;color:#f0cf70}
+.wa,.airbnb{border-radius:999px;padding:16px 27px;box-shadow:0 8px 24px rgba(0,0,0,.14)}
+
+footer{max-width:1180px;padding:80px 32px 60px;gap:55px}
+footer h3{font-family:Georgia,serif;font-size:20px;font-weight:500}
+footer p,footer li{font-size:11px;line-height:1.9}
+.copyright{background:#f7f4ed;border-top:1px solid var(--lux-line)}
+
+@media(max-width:900px){
+ .contact-section{grid-template-columns:1fr;max-width:760px}
+ .contact-info{border-left:1px solid var(--lux-line)}
+}
+@media(max-width:700px){
+ .page-hero,.page-title{height:460px;min-height:460px}
+ .page-hero{border-radius:0 0 20px 20px}
+ .page-title{padding:115px 22px 25px}
+ .page-title:before{font-size:8px;letter-spacing:2.4px}
+ .page-title h1{font-size:49px}
+ .contact-section{padding:55px 15px 70px}
+ .contact-form,.contact-info{border-radius:18px;padding:27px 20px}
+ .contact-form{margin-bottom:18px}
+ .contact-info{border-top:1px solid var(--lux-line);border-left:1px solid var(--lux-line)}
+ .name-grid{grid-template-columns:1fr}
+ .cta{border-radius:20px 20px 0 0}
+}
+</style>
+
+<style>.hero-social img,.footer-social img{width:17px;height:17px;display:block;filter:brightness(0) invert(1)}.footer-social img{filter:none}</style>
+
+<style>
+.contact-section{
+  max-width:1160px;
+  margin:0 auto;
+  padding:82px 28px 95px;
+  grid-template-columns:minmax(0,1.25fr) minmax(300px,.72fr);
+  gap:28px;
+  align-items:start;
+}
+.contact-form{
+  padding:38px 42px 40px;
+  border-radius:22px;
+}
+.contact-form:before{margin-bottom:10px}
+.contact-form h2{
+  font-size:clamp(34px,3.4vw,44px);
+  line-height:1.08;
+  margin:0 0 10px;
+}
+.contact-form>p{margin:0 0 28px}
+.form-group{margin-bottom:15px}
+.form-group label{margin-bottom:7px}
+.name-grid{gap:12px}
+input{
+  height:46px;
+}
+input,textarea{
+  padding:12px 14px;
+  border-radius:10px;
+}
+textarea{
+  min-height:112px;
+  max-height:180px;
+}
+.phone-input{
+  max-width:100%;
+}
+.send-btn{
+  height:48px;
+  padding:0 24px;
+  margin-top:4px;
+  border-radius:10px;
+}
+.contact-info{
+  padding:32px;
+  border-radius:22px;
+}
+.map{
+  height:205px;
+}
+@media (min-width:1200px){
+  .contact-section{
+    max-width:1220px;
+    grid-template-columns:minmax(0,1.35fr) 360px;
+  }
+  .contact-form{
+    padding:42px 48px;
+  }
+}
+@media (max-width:900px){
+  .contact-section{
+    max-width:760px;
+    grid-template-columns:1fr;
+    padding:65px 22px 75px;
+  }
+  .contact-form,.contact-info{padding:32px}
+}
+@media (max-width:700px){
+  .contact-section{
+    padding:38px 14px 55px;
+  }
+  .contact-form,.contact-info{
+    padding:25px 18px;
+    border-radius:17px;
+  }
+  .contact-form h2{
+    font-size:32px;
+  }
+  .contact-form>p{
+    font-size:12px;
+    margin-bottom:24px;
+  }
+  .name-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  input{
+    height:48px;
+    font-size:16px;
+  }
+  textarea{
+    min-height:120px;
+    font-size:16px;
+  }
+  .send-btn{
+    height:50px;
+  }
+  .map{
+    height:220px;
+  }
+}
+@media (max-width:420px){
+  .contact-section{
+    padding-left:10px;
+    padding-right:10px;
+  }
+  .contact-form,.contact-info{
+    padding:22px 15px;
+  }
+  .contact-form h2{
+    font-size:29px;
+  }
+}
+</style>
+
+
+<style>
+body,input,textarea,button{
+  font-family:Inter,Arial,Helvetica,sans-serif;
+}
+.contact-form h2,.location-text,.cta h2,footer h3{
+  font-family:Inter,Arial,Helvetica,sans-serif;
+}
+.contact-form h2{
+  font-weight:650;
+  letter-spacing:-1.6px;
+}
+.page-title h1{
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  font-weight:650;
+  letter-spacing:-2.5px;
+}
+.hero-social,.footer-social,.social-links{
+  display:flex;
+  align-items:center;
+  gap:11px;
+}
+.hero-social a,.footer-social a,.social-links a{
+  width:39px;
+  height:39px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  transition:.25s ease;
+}
+.hero-social a{
+  border:1px solid rgba(255,255,255,.48);
+  background:rgba(0,0,0,.12);
+  backdrop-filter:blur(8px);
+}
+.hero-social img{
+  width:18px;
+  height:18px;
+  display:block;
+  filter:brightness(0) invert(1);
+}
+.footer-social a,.social-links a{
+  border:1px solid #e5ddcf;
+  background:#faf8f3;
+}
+.footer-social img,.social-links img{
+  width:17px;
+  height:17px;
+  display:block;
+  filter:none;
+}
+.hero-social a:hover,.footer-social a:hover,.social-links a:hover{
+  transform:translateY(-3px);
+  background:#d8b24b;
+  border-color:#d8b24b;
+}
+@media(max-width:700px){
+  .hero-social{display:none}
+}
+</style>
+
+
+<style>
+.premium-date{
+    position:relative;
+    width:100%;
+    max-width:100%;
+}
+.date-trigger{
+    width:100%;
+    min-height:58px;
+    border:1px solid #e3d7c2;
+    border-radius:14px;
+    background:#fcfbf8;
+    padding:9px 14px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    cursor:pointer;
+    text-align:left;
+    color:#171714;
+    transition:border-color .2s, box-shadow .2s, background .2s;
+}
+.date-trigger:hover,
+.date-trigger.active{
+    border-color:#c9a449;
+    background:#fff;
+    box-shadow:0 0 0 4px rgba(201,164,73,.09);
+}
+.date-icon{
+    width:38px;
+    height:38px;
+    flex:0 0 38px;
+    border-radius:11px;
+    background:#0f3d4d;
+    display:grid;
+    place-items:center;
+}
+.date-icon svg{
+    width:19px;
+    height:19px;
+    fill:none;
+    stroke:#fff;
+    stroke-width:1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+.date-copy{
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+    flex:1;
+}
+.date-copy strong{
+    font-size:13px;
+    font-weight:650;
+}
+.date-copy small{
+    color:#91897d;
+    font-size:10px;
+}
+.date-chevron{
+    color:#a27e27;
+    font-size:21px;
+    line-height:1;
+    transition:transform .2s;
+}
+.date-trigger.active .date-chevron{transform:rotate(180deg)}
+.calendar-popover{
+    position:absolute;
+    z-index:80;
+    top:calc(100% + 10px);
+    left:0;
+    width:330px;
+    max-width:calc(100vw - 40px);
+    padding:18px;
+    border:1px solid #e5dbc9;
+    border-radius:18px;
+    background:rgba(255,255,255,.98);
+    box-shadow:0 22px 55px rgba(36,29,18,.16);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-7px) scale(.985);
+    transform-origin:top left;
+    transition:.18s ease;
+}
+.calendar-popover.open{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0) scale(1);
+}
+.calendar-head{
+    display:grid;
+    grid-template-columns:38px 1fr 38px;
+    align-items:center;
+    gap:8px;
+    margin-bottom:16px;
+}
+.calendar-head>div{text-align:center}
+.calendar-head strong{
+    display:block;
+    font-size:14px;
+    text-transform:capitalize;
+}
+.calendar-head small{
+    display:block;
+    color:#9a9287;
+    font-size:9px;
+    margin-top:3px;
+}
+.calendar-nav{
+    width:36px;
+    height:36px;
+    padding:0;
+    border:1px solid #ece3d5;
+    border-radius:50%;
+    background:#faf8f3;
+    color:#171714;
+    font-size:23px;
+    line-height:1;
+    cursor:pointer;
+}
+.calendar-nav:hover{
+    border-color:#c9a449;
+    background:#f6efd9;
+}
+.calendar-week,
+.calendar-days{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:5px;
+}
+.calendar-week{
+    margin-bottom:7px;
+}
+.calendar-week span{
+    text-align:center;
+    color:#9a9287;
+    font-size:8px;
+    font-weight:800;
+    letter-spacing:.4px;
+}
+.calendar-day{
+    aspect-ratio:1;
+    border:0;
+    border-radius:50%;
+    background:transparent;
+    color:#26231e;
+    font-size:11px;
+    cursor:pointer;
+    transition:.15s;
+}
+.calendar-day:hover:not(:disabled){
+    background:#f3ecd9;
+    color:#8c6a19;
+}
+.calendar-day.today{
+    box-shadow:inset 0 0 0 1px #c9a449;
+}
+.calendar-day.selected{
+    background:#0f3d4d;
+    color:#fff;
+    box-shadow:0 5px 14px rgba(15,61,77,.22);
+}
+.calendar-day:disabled{
+    color:#d1cbc1;
+    cursor:not-allowed;
+}
+.calendar-blank{aspect-ratio:1}
+.calendar-foot{
+    margin-top:14px;
+    padding-top:13px;
+    border-top:1px solid #eee7dc;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+}
+.calendar-foot button{
+    border:0;
+    padding:0;
+    background:none;
+    color:#9a7421;
+    font-size:10px;
+    font-weight:700;
+    cursor:pointer;
+}
+.calendar-foot span{
+    color:#9a9287;
+    font-size:8px;
+    text-align:right;
+}
+@media(max-width:700px){
+    .date-trigger{min-height:60px}
+    .calendar-popover{
+        position:fixed;
+        left:14px;
+        right:14px;
+        top:50%;
+        width:auto;
+        max-width:none;
+        transform:translateY(-46%) scale(.98);
+        transform-origin:center;
+        border-radius:20px;
+        padding:20px;
+    }
+    .calendar-popover.open{
+        transform:translateY(-50%) scale(1);
+    }
+    .calendar-day{font-size:12px}
+    .calendar-popover:before{
+        content:"";
+        position:fixed;
+        inset:-100vh -100vw;
+        background:rgba(16,18,18,.32);
+        z-index:-1;
+    }
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HERO -->
+
+<section class="page-hero">
+
+
+    <header>
+
+        <a class="logo" href="index.html">
+            <img src="assets/img/image.png" alt="Cabaña Dorada">
+        </a>
+
+
+        <nav class="nav">
+
+            <a href="index.html">
+                INICIO
+            </a>
+
+            <a href="rooms.html">
+                ROOMS
+            </a>
+
+            <a href="contacto.html">
+                CONTACTO
+            </a>
+
+            <a
+                class="consult"
+                href="https://api.whatsapp.com/send?phone=51967984802&text=El%20mar%20te%20espera%20%E2%80%94%20y%20tiene%20precio%20especial%20para%20ti.%20Reg%C3%ADstrate%20y%20reserva%20directamente%20por%20aqu%C3%AD%3A%20obt%C3%A9n%20S%2F%2090%20de%20descuento%20inmediato%20en%20tu%20estad%C3%ADa%20m%C3%A1s%20acceso%20a%20promociones%20exclusivas%20solo%20para%20hu%C3%A9spedes%20de%20la%20web.%20Sin%20intermediarios%2C%20sin%20costos%20extra.%20Solo%20t%C3%BA%2C%20el%20mar%20y%20el%20mejor%20precio."
+                target="_blank"
+            >
+                RESOLVEMOS TUS CONSULTAS!!
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <div class="hero-social">
+<a href="https://www.facebook.com/cabana.dorada.2025" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt="Facebook"></a>
+<a href="https://www.instagram.com/caba_dorada" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+<a href="https://www.tiktok.com/@cabaa.dorada" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><img src="assets/icons/tiktok.svg" alt="TikTok"></a>
+<a href="https://wa.me/51967984802" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><img src="assets/icons/whatsapp.svg" alt="WhatsApp"></a>
+<a href="mailto:cabadorada21@gmail.com" aria-label="Correo"><img src="assets/icons/mail.svg" alt="Correo"></a>
+</div>
+
+
+    <!-- CONTACTO.PNG DETRAS DEL TEXTO -->
+
+    <div class="page-title">
+
+        <h1>
+            Contacto
+        </h1>
+
+        <p>
+            ¿Tienes dudas sobre disponibilidad, precios o servicios?
+            Contáctanos y con gusto te atendemos.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+<!-- CONTENIDO CONTACTO -->
+
+<main class="contact-section">
+
+
+    <!-- FORMULARIO -->
+
+    <section class="contact-form">
+
+        <h2>
+            ¿Tienes alguna pregunta?
+        </h2>
+
+        <p>
+            Escríbenos y te responderemos a la brevedad posible.
+        </p>
+
+
+        <form id="contactForm">
+
+
+            <div class="form-group">
+
+                <label>
+                    Nombre y Apellido
+                    <span class="required">*</span>
+                </label>
+
+
+                <div class="name-grid">
+
+                    <div>
+
+                        <input
+                            type="text"
+                            id="nombre"
+                            required
+                        >
+
+                        <span class="input-note">
+                            Nombre
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <input
+                            type="text"
+                            id="apellido"
+                            required
+                        >
+
+                        <span class="input-note">
+                            Apellidos
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Email
+                    <span class="required">*</span>
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Teléfono
+                    <span class="required">*</span>
+                </label>
+
+                <input
+                    class="phone-input"
+                    type="tel"
+                    id="telefono"
+                    required
+                >
+
+                <span class="input-note">
+                    Número de contacto
+                </span>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Fecha de alojamiento
+                </label>
+
+                <div class="premium-date">
+                    <button type="button" class="date-trigger" id="dateTrigger" aria-expanded="false">
+                        <span class="date-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M7 2v3M17 2v3M3.5 9h17M5.5 4.5h13a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2v-12a2 2 0 0 1 2-2Z"/>
+                            </svg>
+                        </span>
+                        <span class="date-copy">
+                            <strong id="dateText">Selecciona una fecha</strong>
+                            <small id="dateSubtext">Elige el día de tu estadía</small>
+                        </span>
+                        <span class="date-chevron">⌄</span>
+                    </button>
+
+                    <input type="hidden" id="fecha">
+
+                    <div class="calendar-popover" id="calendarPopover">
+                        <div class="calendar-head">
+                            <button type="button" class="calendar-nav" id="prevMonth" aria-label="Mes anterior">‹</button>
+                            <div>
+                                <strong id="calendarMonth"></strong>
+                                <small>Selecciona tu llegada</small>
+                            </div>
+                            <button type="button" class="calendar-nav" id="nextMonth" aria-label="Mes siguiente">›</button>
+                        </div>
+
+                        <div class="calendar-week">
+                            <span>LU</span><span>MA</span><span>MI</span><span>JU</span><span>VI</span><span>SÁ</span><span>DO</span>
+                        </div>
+
+                        <div class="calendar-days" id="calendarDays"></div>
+
+                        <div class="calendar-foot">
+                            <button type="button" id="clearDate">Limpiar</button>
+                            <span>Consulta disponibilidad por WhatsApp</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Descripción
+                    <span class="required">*</span>
+                </label>
+
+                <textarea
+                    id="descripcion"
+                    required
+                    placeholder="Cuéntanos tu consulta..."
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="send-btn"
+            >
+                ENVIAR
+            </button>
+
+
+        </form>
+
+    </section>
+
+
+    <!-- INFORMACION -->
+
+    <aside class="contact-info">
+
+
+        <div class="info-block">
+
+            <div class="info-title">
+                Ubicación
+            </div>
+
+            <p class="location-text">
+                Distrito de Nuevo Chimbote,
+                provincia del Santa,
+                departamento de Áncash,
+                en Perú
+            </p>
+
+        </div>
+
+
+        <!-- MAPA -->
+
+        <div class="map">
+
+            <iframe
+                src="https://www.google.com/maps?q=Nuevo%20Chimbote%20Peru&z=11&output=embed"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mapa de Nuevo Chimbote">
+            </iframe>
+
+        </div>
+
+
+        <div class="separator"></div>
+
+
+        <div class="info-block">
+
+            <div class="info-title">
+                Horario de Recepción
+            </div>
+
+            <p>
+                <strong>
+                    7:30 AM - 11:00 PM
+                </strong>
+            </p>
+
+        </div>
+
+
+        <div class="info-block">
+
+            <div class="info-title">
+                Contacto
+            </div>
+
+            <p>
+
+                <a href="tel:+51967984802">
+                    +51 - 967 984 802
+                </a>
+
+                <br>
+
+                <a href="tel:+51967984802">
+                    +51 967 984 802
+                </a>
+
+                <br>
+
+                <a href="mailto:cabadorada21@gmail.com">
+                    cabanadorada21@gmail.com
+                </a>
+
+            </p>
+
+        </div>
+
+
+        <div class="separator"></div>
+
+
+        <div class="info-block">
+
+            <div class="info-title">
+                Síguenos
+            </div>
+
+
+            <div class="social-links">
+<a href="https://www.facebook.com/cabana.dorada.2025" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt="Facebook"></a>
+<a href="https://www.instagram.com/caba_dorada" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+<a href="https://www.tiktok.com/@cabaa.dorada" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><img src="assets/icons/tiktok.svg" alt="TikTok"></a>
+<a href="https://wa.me/51967984802" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><img src="assets/icons/whatsapp.svg" alt="WhatsApp"></a>
+<a href="mailto:cabadorada21@gmail.com" aria-label="Correo"><img src="assets/icons/mail.svg" alt="Correo"></a>
+</div>
+
+        </div>
+
+
+    </aside>
+
+
+</main>
+
+
+<!-- CTA - PERSONAS.PNG DETRAS -->
+
+<section class="cta">
+
+
+    <small>
+        CALETA COLORADA · PLAYA EL DORADO · CHIMBOTE
+    </small>
+
+
+    <h2>
+
+        El plan que llevas meses postergando
+
+        <br>
+
+        <em>
+            empieza aquí
+        </em>
+
+    </h2>
+
+
+    <div class="cta-line"></div>
+
+
+    <p>
+        Entre Playa El Dorado y Caleta Colorada,
+        vive el descanso que mereces frente al mar,
+        con privacidad, tranquilidad y atardeceres inolvidables.
+    </p>
+
+
+    <p>
+        Pocas fechas disponibles. Reserva ahora y obtén:
+    </p>
+
+
+    <strong>
+        S/ 90 de descuento exclusivo al reservar directo.
+    </strong>
+
+
+    <div class="cta-buttons">
+
+
+        <a
+            class="wa"
+            href="https://wa.me/51967984802?text=Hola%2C%20quiero%20consultar%20disponibilidad%20para%20Caba%C3%B1a%20Dorada"
+            target="_blank"
+        >
+            ☏ &nbsp; Reservar por WhatsApp
+        </a>
+
+
+        <a
+            class="airbnb"
+            href="#"
+        >
+            ↗ &nbsp; Ver en Airbnb
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+
+    <div>
+
+        <h3>
+            Cabaña Dorada
+        </h3>
+
+        <p>
+            Disfruta de una experiencia única frente al mar
+            en Playa El Dorado, Chimbote.
+            Equipada con todas las comodidades para escapadas,
+            eventos y momentos inolvidables.
+        </p>
+
+
+        <div class="footer-social">
+<a href="https://www.facebook.com/cabana.dorada.2025" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt="Facebook"></a>
+<a href="https://www.instagram.com/caba_dorada" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+<a href="https://www.tiktok.com/@cabaa.dorada" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><img src="assets/icons/tiktok.svg" alt="TikTok"></a>
+<a href="https://wa.me/51967984802" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><img src="assets/icons/whatsapp.svg" alt="WhatsApp"></a>
+<a href="mailto:cabadorada21@gmail.com" aria-label="Correo"><img src="assets/icons/mail.svg" alt="Correo"></a>
+</div>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            Navegación
+        </h3>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Inicio
+                </a>
+            </li>
+
+            <li>
+                <a href="rooms.html">
+                    Rooms – La Cabaña
+                </a>
+            </li>
+
+            <li>
+                <a href="contacto.html">
+                    Contacto
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            ¿Qué incluye?
+        </h3>
+
+        <ul>
+
+            <li>
+                ✓ Acceso privado a la playa
+            </li>
+
+            <li>
+                ✓ Cocina equipada
+            </li>
+
+            <li>
+                ✓ Ropa de cama y toallas
+            </li>
+
+            <li>
+                ✓ Wifi incluido
+            </li>
+
+            <li>
+                ✓ Parrilla / área exterior
+            </li>
+
+            <li>
+                ✓ Vista panorámica al Pacífico
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            Preguntas frecuentes
+        </h3>
+
+        <p>
+            <strong>
+                ¿Cuántas personas entran?
+            </strong>
+
+            <br>
+
+            Hasta 12 personas cómodamente.
+        </p>
+
+
+        <p>
+            <strong>
+                ¿Se puede reservar por días?
+            </strong>
+
+            <br>
+
+            Sí, mínimo 1 noche.
+        </p>
+
+
+        <p>
+            <strong>
+                ¿Hay descuento reservando directo?
+            </strong>
+
+            <br>
+
+            Sí, S/ 90 off solo por la web oficial.
+        </p>
+
+    </div>
+
+
+</footer>
+
+
+<div class="copyright">
+
+    © 2026 Cabaña Dorada ·
+    Playa El Dorado, Chimbote, Áncash · Perú
+
+    <br>
+
+    Desarrollado por
+
+    <strong>
+        CAVIDA INTEGRAL S.A.C.
+    </strong>
+
+</div>
+
+
+<!-- FORMULARIO A WHATSAPP -->
+
+<script>
+
+document
+.getElementById("contactForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+
+    const nombre =
+        document.getElementById("nombre").value;
+
+    const apellido =
+        document.getElementById("apellido").value;
+
+    const email =
+        document.getElementById("email").value;
+
+    const telefono =
+        document.getElementById("telefono").value;
+
+    const fecha =
+        document.getElementById("fecha").value;
+
+    const descripcion =
+        document.getElementById("descripcion").value;
+
+
+    const mensaje =
+`Hola, quiero realizar una consulta para Cabaña Dorada.
+
+Nombre: ${nombre} ${apellido}
+Email: ${email}
+Teléfono: ${telefono}
+Fecha de alojamiento: ${fecha || "Por confirmar"}
+
+Consulta:
+${descripcion}`;
+
+
+    const whatsapp =
+        "https://wa.me/51967984802?text=" +
+        encodeURIComponent(mensaje);
+
+
+    window.open(
+        whatsapp,
+        "_blank"
+    );
+
+});
+
+</script>
+
+
+
+<script>
+(function(){
+    const trigger = document.getElementById("dateTrigger");
+    const popover = document.getElementById("calendarPopover");
+    const daysBox = document.getElementById("calendarDays");
+    const monthLabel = document.getElementById("calendarMonth");
+    const hiddenInput = document.getElementById("fecha");
+    const dateText = document.getElementById("dateText");
+    const dateSubtext = document.getElementById("dateSubtext");
+    const prev = document.getElementById("prevMonth");
+    const next = document.getElementById("nextMonth");
+    const clear = document.getElementById("clearDate");
+
+    if(!trigger || !popover) return;
+
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    let view = new Date(today.getFullYear(), today.getMonth(), 1);
+    let selected = null;
+
+    const monthFmt = new Intl.DateTimeFormat("es-PE", {month:"long", year:"numeric"});
+    const longFmt = new Intl.DateTimeFormat("es-PE", {weekday:"long", day:"numeric", month:"long", year:"numeric"});
+
+    function isoLocal(d){
+        const y = d.getFullYear();
+        const m = String(d.getMonth()+1).padStart(2,"0");
+        const day = String(d.getDate()).padStart(2,"0");
+        return `${y}-${m}-${day}`;
+    }
+
+    function render(){
+        monthLabel.textContent = monthFmt.format(view);
+        daysBox.innerHTML = "";
+
+        let first = new Date(view.getFullYear(), view.getMonth(), 1).getDay();
+        first = first === 0 ? 6 : first - 1;
+
+        const total = new Date(view.getFullYear(), view.getMonth()+1, 0).getDate();
+
+        for(let i=0;i<first;i++){
+            const blank = document.createElement("span");
+            blank.className = "calendar-blank";
+            daysBox.appendChild(blank);
+        }
+
+        for(let day=1; day<=total; day++){
+            const d = new Date(view.getFullYear(), view.getMonth(), day);
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "calendar-day";
+            btn.textContent = day;
+
+            if(d < today) btn.disabled = true;
+            if(d.getTime() === today.getTime()) btn.classList.add("today");
+            if(selected && d.getTime() === selected.getTime()) btn.classList.add("selected");
+
+            btn.addEventListener("click", function(){
+                selected = d;
+                hiddenInput.value = isoLocal(d);
+                dateText.textContent = longFmt.format(d);
+                dateSubtext.textContent = "Fecha seleccionada";
+                closeCalendar();
+                render();
+            });
+
+            daysBox.appendChild(btn);
+        }
+
+        const prevMonth = new Date(view.getFullYear(), view.getMonth()-1, 1);
+        const currentMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+        prev.disabled = prevMonth < currentMonth;
+        prev.style.opacity = prev.disabled ? ".35" : "1";
+    }
+
+    function openCalendar(){
+        popover.classList.add("open");
+        trigger.classList.add("active");
+        trigger.setAttribute("aria-expanded","true");
+    }
+
+    function closeCalendar(){
+        popover.classList.remove("open");
+        trigger.classList.remove("active");
+        trigger.setAttribute("aria-expanded","false");
+    }
+
+    trigger.addEventListener("click", function(){
+        popover.classList.contains("open") ? closeCalendar() : openCalendar();
+    });
+
+    prev.addEventListener("click", function(){
+        if(prev.disabled) return;
+        view = new Date(view.getFullYear(), view.getMonth()-1, 1);
+        render();
+    });
+
+    next.addEventListener("click", function(){
+        view = new Date(view.getFullYear(), view.getMonth()+1, 1);
+        render();
+    });
+
+    clear.addEventListener("click", function(){
+        selected = null;
+        hiddenInput.value = "";
+        dateText.textContent = "Selecciona una fecha";
+        dateSubtext.textContent = "Elige el día de tu estadía";
+        view = new Date(today.getFullYear(), today.getMonth(), 1);
+        render();
+        closeCalendar();
+    });
+
+    document.addEventListener("click", function(e){
+        if(!popover.contains(e.target) && !trigger.contains(e.target)) closeCalendar();
+    });
+
+    document.addEventListener("keydown", function(e){
+        if(e.key === "Escape") closeCalendar();
+    });
+
+    render();
+})();
+</script>
+
+</body>
+</html>

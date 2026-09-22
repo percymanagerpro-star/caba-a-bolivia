@@ -1,0 +1,16 @@
+FOTOS PARA LA WEB
+hero.jpg
+caleta-1.jpg
+caleta-2.jpg
+caleta-3.jpg
+caleta-4.jpg
+panorama.jpg
+final.jpg
+
+ROOMS:
+rooms-portada.jpg
+suite-dorada.jpg
+habitacion-familiar.jpg
+cocina.jpg
+
+Reemplaza estos archivos por tus fotos usando exactamente los mismos nombres.
