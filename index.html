@@ -1471,6 +1471,15 @@ button.day{appearance:none;-webkit-appearance:none;}
 .whatsapp-float img{width:100%!important;height:100%!important;display:block!important;object-fit:cover!important;border-radius:50%!important;}
 </style>
 
+
+<style>
+/* Texto debajo del logo */
+.logo-brand-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;width:max-content;}
+.logo-subtitle{display:block;margin-top:5px;color:#e0bd50;font-size:8px;font-weight:800;letter-spacing:2px;white-space:nowrap;text-shadow:0 1px 5px rgba(0,0,0,.65);}
+@media(max-width:650px){header{height:92px!important;align-items:center!important}.logo img{height:54px!important;max-width:128px!important}.logo-subtitle{margin-top:4px;font-size:6px;letter-spacing:1.25px;}}
+@media(max-width:380px){.logo-subtitle{font-size:5.5px;letter-spacing:1px;}}
+</style>
+
 </head>
 
 <body>
@@ -1500,10 +1509,10 @@ button.day{appearance:none;-webkit-appearance:none;}
     <header>
 
         <a class="logo" href="index.html">
-            <img
-                src="assets/img/image.png"
-                alt="Cabaña Dorada"
-            >
+            <span class="logo-brand-wrap">
+                <img src="assets/img/image.png" alt="Cabaña Dorada">
+                <span class="logo-subtitle">ALOJAMIENTO &amp; HOSPEDAJE</span>
+            </span>
         </a>
 
         <nav class="nav">
