@@ -1426,6 +1426,50 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
   .cd-load{width:68vw !important;font-size:7px !important;letter-spacing:2px !important}
 }
 </style>
+<style>
+.video-anuncio-wrap{position:relative;}
+.activar-sonido{position:absolute;right:18px;bottom:18px;z-index:5;border:1px solid rgba(255,255,255,.75);border-radius:999px;padding:11px 16px;background:rgba(0,0,0,.68);color:#fff;font-size:11px;font-weight:800;letter-spacing:.7px;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
+.activar-sonido.oculto{display:none;}
+@media(max-width:650px){.activar-sonido{right:12px;bottom:12px;padding:10px 13px;font-size:10px;}}
+</style>
+
+<style>
+/* CORRECCIONES FINALES: video anuncio + estabilidad responsive */
+.video-section{
+    width:100%;
+    padding:0;
+    margin:0;
+    background:#000;
+    overflow:hidden;
+}
+.video-container{
+    width:100%;
+    max-width:1400px;
+    margin:0 auto;
+    background:#000;
+    overflow:hidden;
+}
+.video-container video{
+    display:block;
+    width:100%;
+    height:auto;
+    max-height:82vh;
+    object-fit:contain;
+    background:#000;
+}
+.day{font-family:inherit;}
+button.day{appearance:none;-webkit-appearance:none;}
+@media(max-width:650px){
+    .video-container video{max-height:none;width:100%;height:auto;}
+}
+</style>
+
+
+<style>
+/* Logo real de WhatsApp en botón flotante */
+.whatsapp-float{padding:0!important;overflow:hidden!important;background:#25D366!important;}
+.whatsapp-float img{width:100%!important;height:100%!important;display:block!important;object-fit:cover!important;border-radius:50%!important;}
+</style>
 
 </head>
 
@@ -1575,6 +1619,20 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
         </div>
 
     </div>
+
+</section>
+
+<!-- VIDEO ANUNCIO -->
+
+<section class="video-section">
+
+    <div class="video-container video-anuncio-wrap">
+
+        <video id="videoAnuncio" muted playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback">
+            <source src="assets/img/video/anuncio.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+</div>
 
 </section>
 
@@ -1836,7 +1894,7 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
   <img id="lightboxImg" alt="Galería Cabaña Dorada">
 </div>
 
-<a class="whatsapp-float" href="https://wa.me/51967984802?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Caba%C3%B1a%20Dorada" target="_blank" rel="noopener" aria-label="WhatsApp">☎</a>
+<a class="whatsapp-float" href="https://wa.me/51967984802?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Caba%C3%B1a%20Dorada" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="https://tse1.mm.bing.net/th/id/OIP.95Xk4ECikUfUBezmP93K3AHaHa?r=0&amp;rs=1&amp;pid=ImgDetMain&amp;o=7&amp;rm=3" alt="WhatsApp"></a>
 
 
 
@@ -2131,6 +2189,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const videos = document.querySelectorAll("video");
 
     videos.forEach(function(video) {
+        if (video.id === "videoAnuncio") return;
         video.muted = true;
         video.defaultMuted = true;
         video.loop = true;
@@ -2236,6 +2295,67 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
   },4050);
   setTimeout(()=>intro.remove(),5000);
 })();
+</script>
+
+<script>
+/* VIDEO ANUNCIO: sin controles. Al entrar reproduce; al salir reinicia.
+   El sonido se habilita automáticamente después de la primera interacción del usuario,
+   respetando las reglas de autoplay de Chrome/Android/Safari. */
+document.addEventListener("DOMContentLoaded", function () {
+    const video = document.getElementById("videoAnuncio");
+    if (!video) return;
+
+    video.controls = false;
+    video.removeAttribute("controls");
+    video.playsInline = true;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.volume = 1;
+
+    let audioDesbloqueado = false;
+    let videoVisible = false;
+
+    function habilitarAudio() {
+        if (audioDesbloqueado) return;
+        audioDesbloqueado = true;
+        video.muted = false;
+        video.defaultMuted = false;
+        video.volume = 1;
+        if (videoVisible) {
+            const p = video.play();
+            if (p) p.catch(function(){});
+        }
+        document.removeEventListener("pointerdown", habilitarAudio, true);
+        document.removeEventListener("touchstart", habilitarAudio, true);
+        document.removeEventListener("keydown", habilitarAudio, true);
+    }
+
+    document.addEventListener("pointerdown", habilitarAudio, true);
+    document.addEventListener("touchstart", habilitarAudio, true);
+    document.addEventListener("keydown", habilitarAudio, true);
+
+    const observerAnuncio = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+            videoVisible = entry.isIntersecting && entry.intersectionRatio >= 0.45;
+            if (videoVisible) {
+                video.muted = !audioDesbloqueado;
+                video.defaultMuted = !audioDesbloqueado;
+                const p = video.play();
+                if (p) p.catch(function(){
+                    video.muted = true;
+                    video.defaultMuted = true;
+                    const q = video.play();
+                    if (q) q.catch(function(){});
+                });
+            } else {
+                video.pause();
+                try { video.currentTime = 0; } catch(e) {}
+            }
+        });
+    }, { threshold: [0, 0.45, 1] });
+
+    observerAnuncio.observe(video);
+});
 </script>
 
 </body>
